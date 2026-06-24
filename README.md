@@ -64,7 +64,7 @@ const SHEETS_URL = 'https://script.google.com/macros/s/AKfycby.../exec';
 5. 儲存後約 1–2 分鐘，即可透過以下網址訪問問卷：
 
 ```
-https://[你的GitHub帳號].github.io/macau-survey/
+https://[你的GitHub帳號].github.io/PMS_Mo_survey/
 ```
 
 ---
