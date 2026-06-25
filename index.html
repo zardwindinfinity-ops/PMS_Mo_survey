@@ -7,6 +7,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;600;700&family=Noto+Sans+TC:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
+/* ── 設計系統 ── */
 :root {
   --ink:        #1C1C1A;
   --ink-muted:  #6A6860;
@@ -26,7 +27,9 @@
   --r: 8px;
   --shadow: 0 1px 4px rgba(0,0,0,0.06);
 }
+
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
 body {
   font-family: 'Noto Sans TC', sans-serif;
   background: var(--paper);
@@ -40,65 +43,81 @@ body {
 .site-header {
   background: var(--navy);
   color: white;
-  padding: 2rem 1.25rem 1.75rem;
+  padding: 2.5rem 1.5rem 2rem;
   text-align: center;
 }
 .site-header .kicker {
-  font-size: 0.65rem;
-  letter-spacing: 0.15em;
+  font-size: 0.68rem;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
-  opacity: 0.5;
-  margin-bottom: 0.6rem;
+  opacity: 0.55;
+  margin-bottom: 0.75rem;
   font-weight: 500;
 }
 .site-header h1 {
   font-family: 'Noto Serif TC', serif;
-  font-size: clamp(1.15rem, 5vw, 1.7rem);
+  font-size: clamp(1.25rem, 4vw, 1.75rem);
   font-weight: 700;
   line-height: 1.45;
-  margin-bottom: 0.35rem;
+  margin-bottom: 0.4rem;
 }
 .site-header .subtitle {
-  font-size: 0.78rem;
+  font-size: 0.8rem;
   opacity: 0.6;
-  line-height: 1.7;
+  line-height: 1.6;
 }
 
 /* ── 進度條 ── */
-.prog-rail { height: 3px; background: var(--rule); position: sticky; top: 0; z-index: 200; }
-.prog-fill { height: 100%; background: var(--navy); width: 0%; transition: width 0.35s ease; }
+.prog-rail {
+  height: 3px;
+  background: var(--rule);
+  position: sticky;
+  top: 0;
+  z-index: 200;
+}
+.prog-fill {
+  height: 100%;
+  background: var(--navy);
+  width: 0%;
+  transition: width 0.35s ease;
+}
 
 /* ── 主體 ── */
-main { max-width: 680px; margin: 0 auto; padding: 1.75rem 1rem 5rem; }
+main {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 2rem 1.25rem 5rem;
+}
 
 /* ── 告示欄 ── */
 .notice {
   border-left: 3px solid var(--navy);
   background: var(--navy-dim);
   border-radius: 0 var(--r) var(--r) 0;
-  padding: 0.85rem 1rem;
-  font-size: 0.79rem;
+  padding: 0.9rem 1.1rem;
+  font-size: 0.8rem;
   color: var(--navy);
   line-height: 1.7;
-  margin-bottom: 1.75rem;
+  margin-bottom: 2rem;
 }
 
 /* ── 區塊 ── */
-.section { margin-bottom: 2.5rem; }
+.section { margin-bottom: 2.75rem; }
+
 .section-head {
   display: flex;
   align-items: center;
-  gap: 0.6rem;
-  padding-bottom: 0.65rem;
+  gap: 0.65rem;
+  padding-bottom: 0.7rem;
   border-bottom: 1.5px solid var(--rule);
-  margin-bottom: 0.9rem;
+  margin-bottom: 1rem;
 }
 .sec-tag {
-  font-size: 0.63rem;
+  font-size: 0.65rem;
   font-weight: 700;
-  padding: 3px 9px;
+  padding: 3px 10px;
   border-radius: 20px;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.05em;
   white-space: nowrap;
 }
 .tag-navy   { background: var(--navy-dim);   color: var(--navy); }
@@ -106,43 +125,61 @@ main { max-width: 680px; margin: 0 auto; padding: 1.75rem 1rem 5rem; }
 .tag-amber  { background: var(--amber-dim);  color: var(--amber); }
 .tag-red    { background: var(--red-dim);    color: var(--red); }
 .tag-violet { background: var(--violet-dim); color: var(--violet); }
-.section-title { font-size: 0.92rem; font-weight: 700; color: var(--ink); }
-.section-desc { font-size: 0.77rem; color: var(--ink-muted); margin-bottom: 1rem; line-height: 1.7; }
+
+.section-title {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--ink);
+}
+.section-desc {
+  font-size: 0.78rem;
+  color: var(--ink-muted);
+  margin-bottom: 1.1rem;
+  line-height: 1.7;
+}
 
 /* ── 情境框 ── */
 .scenario-box {
   border-radius: var(--r);
-  padding: 1rem 1.1rem;
-  margin-bottom: 1rem;
-  font-size: 0.86rem;
-  line-height: 1.85;
+  padding: 1.1rem 1.25rem;
+  margin-bottom: 1.1rem;
+  font-size: 0.88rem;
+  line-height: 1.8;
   border: 1.5px solid;
 }
-.scenario-box.type-a { background: var(--teal-dim); border-color: #9ECFC1; color: var(--teal); }
-.scenario-box.type-b { background: var(--red-dim);  border-color: #E8A8A8; color: var(--red); }
+.scenario-box.type-a {
+  background: var(--teal-dim);
+  border-color: #9ECFC1;
+  color: var(--teal);
+}
+.scenario-box.type-b {
+  background: var(--red-dim);
+  border-color: #E8A8A8;
+  color: var(--red);
+}
 .scenario-label {
-  font-size: 0.65rem;
+  font-size: 0.68rem;
   font-weight: 700;
   letter-spacing: 0.1em;
   text-transform: uppercase;
   margin-bottom: 0.5rem;
-  opacity: 0.7;
+  opacity: 0.75;
 }
 .scenario-box strong { font-weight: 600; }
 
-/* ── 場景框 ── */
+/* ── 場景框（決策題用）── */
 .scene-box {
   background: var(--amber-dim);
   border: 1px solid #E8C880;
   border-radius: var(--r);
-  padding: 0.85rem 1rem;
-  font-size: 0.82rem;
+  padding: 0.9rem 1.1rem;
+  font-size: 0.83rem;
   color: var(--amber);
-  margin-bottom: 0.8rem;
-  line-height: 1.75;
+  margin-bottom: 0.85rem;
+  line-height: 1.7;
 }
 .scene-box .scene-label {
-  font-size: 0.63rem;
+  font-size: 0.65rem;
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -155,163 +192,167 @@ main { max-width: 680px; margin: 0 auto; padding: 1.75rem 1rem 5rem; }
   background: var(--surface);
   border: 1px solid var(--rule);
   border-radius: var(--r);
-  padding: 0.95rem 1.05rem;
-  margin-bottom: 0.6rem;
+  padding: 1rem 1.15rem;
+  margin-bottom: 0.65rem;
   box-shadow: var(--shadow);
   transition: border-color 0.18s;
 }
 .q-card:focus-within { border-color: var(--navy); }
 .q-card.has-error { border-color: var(--red); }
-.q-row { display: flex; gap: 0.6rem; align-items: flex-start; }
-.q-num { font-size: 0.66rem; font-weight: 700; color: var(--ink-muted); min-width: 26px; padding-top: 2px; }
-.q-body { flex: 1; min-width: 0; }
-.q-text { font-size: 0.87rem; line-height: 1.7; }
+
+.q-row { display: flex; gap: 0.7rem; align-items: flex-start; }
+.q-num {
+  font-size: 0.68rem;
+  font-weight: 700;
+  color: var(--ink-muted);
+  min-width: 28px;
+  padding-top: 2px;
+  letter-spacing: 0.03em;
+}
+.q-body { flex: 1; }
+.q-text { font-size: 0.88rem; line-height: 1.7; }
+
+.badge {
+  display: inline-block;
+  font-size: 0.6rem;
+  padding: 1px 6px;
+  border-radius: 20px;
+  margin-left: 5px;
+  vertical-align: middle;
+  font-weight: 600;
+}
+.badge-rev   { background: #FFF3CD; color: #7A5700; }
+.badge-local { background: var(--teal-dim); color: var(--teal); }
+
 .req { color: var(--red); margin-left: 2px; }
 .error-msg {
   display: none;
-  font-size: 0.7rem;
+  font-size: 0.72rem;
   color: var(--red);
-  margin-top: 0.35rem;
-  padding-top: 0.35rem;
+  margin-top: 0.4rem;
+  padding-top: 0.4rem;
   border-top: 1px solid var(--red-dim);
 }
 .q-card.has-error .error-msg { display: block; }
 
-/* ── Likert 量表優化 (手機優化版) ── */
-.scale-wrap { 
-  margin-top: 1rem; 
-  padding-top: 1rem; 
+/* ── Likert 量表 ── */
+.scale-wrap {
+  margin-top: 0.8rem;
+  padding-top: 0.8rem;
   border-top: 1px solid var(--rule);
-  position: relative;
 }
-
-/* 在選項後面加上一條線，增加視覺連續感 */
-.scale-wrap::before {
-  content: '';
-  position: absolute;
-  top: 55px; 
-  left: 20px;
-  right: 20px;
-  height: 2px;
-  background: var(--rule);
-  z-index: 0;
-}
-
-/* 兩端文字：手機改為上下排列且有空間 */
 .scale-labels {
   display: flex;
-  flex-direction: column;
-  gap: 0.4rem;
-  font-size: 0.75rem;
-  color: var(--ink);
-  font-weight: 500;
-  margin-bottom: 1.2rem;
-  line-height: 1.4;
-}
-.scale-labels .lbl-left, .scale-labels .lbl-right { 
-  text-align: center; 
-  padding: 4px 8px;
-  background: var(--navy-dim);
-  border-radius: 4px;
-}
-.scale-labels .lbl-sep { display: none; }
-
-.scale-options { 
-  display: flex; 
-  gap: 8px; 
   justify-content: space-between;
-  position: relative; 
-  z-index: 1;
+  font-size: 0.66rem;
+  color: var(--ink-muted);
+  margin-bottom: 0.45rem;
+}
+.scale-options {
+  display: flex;
+  gap: 5px;
+  justify-content: center;
 }
 .scale-options label {
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap: 3px;
   cursor: pointer;
   flex: 1;
 }
 .scale-options input[type="radio"] { display: none; }
-
 .scale-btn {
   width: 100%;
-  max-width: 45px;
+  max-width: 42px;
   aspect-ratio: 1;
   border-radius: 50%;
-  border: 2px solid var(--rule);
-  background: white;
+  border: 1.5px solid var(--rule);
+  background: var(--paper);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 0.9rem;
-  font-weight: 600;
-  transition: all 0.2s;
+  font-size: 0.78rem;
+  color: var(--ink-muted);
+  transition: all 0.14s;
   cursor: pointer;
 }
-
 .scale-options input[type="radio"]:checked + .scale-btn {
   background: var(--navy);
   border-color: var(--navy);
   color: white;
+  font-weight: 700;
+}
+.scale-options label:hover .scale-btn {
+  border-color: var(--navy);
+  color: var(--navy);
 }
 
-/* 手機版細節調整 */
-@media (max-width: 480px) {
-  .scale-wrap::before { top: 58px; }
-  .scale-labels { margin-bottom: 1.5rem; }
-  main { padding: 1.25rem 0.85rem 4rem; }
-  .site-header { padding: 1.5rem 1rem 1.25rem; }
-}
-
-/* ── 選擇題 ── */
-.radio-group { display: flex; flex-direction: column; gap: 5px; margin-top: 0.65rem; }
+/* ── 選擇題（單選）── */
+.radio-group { display: flex; flex-direction: column; gap: 5px; margin-top: 0.7rem; }
 .radio-group label {
   display: flex;
   align-items: flex-start;
   gap: 8px;
-  font-size: 0.84rem;
+  font-size: 0.85rem;
   cursor: pointer;
-  padding: 8px 10px;
+  padding: 7px 10px;
   border-radius: 6px;
   border: 1px solid transparent;
-  transition: background 0.14s;
+  transition: background 0.14s, border-color 0.14s;
   line-height: 1.6;
 }
 .radio-group label:hover { background: var(--navy-dim); }
 .radio-group input[type="radio"] { margin-top: 3px; accent-color: var(--navy); flex-shrink: 0; }
 .radio-group input[type="radio"]:checked + span { font-weight: 600; color: var(--navy); }
 
-/* ── 提交 ── */
-.submit-zone { text-align: center; padding-top: 2rem; border-top: 1.5px solid var(--rule); margin-top: 1rem; }
+/* ── 提交區 ── */
+.submit-zone {
+  text-align: center;
+  padding-top: 2rem;
+  border-top: 1.5px solid var(--rule);
+  margin-top: 1rem;
+}
 .submit-btn {
   background: var(--navy);
   color: white;
   border: none;
   border-radius: 6px;
-  padding: 0.85rem 2.5rem;
+  padding: 0.85rem 3rem;
   font-size: 0.95rem;
   font-weight: 600;
   font-family: 'Noto Sans TC', sans-serif;
   cursor: pointer;
-  transition: background 0.18s;
+  transition: background 0.18s, transform 0.12s;
   letter-spacing: 0.04em;
-  touch-action: manipulation;
 }
 .submit-btn:hover { background: #0F2D42; }
+.submit-btn:active { transform: scale(0.98); }
 .submit-btn:disabled { background: var(--ink-muted); cursor: not-allowed; }
-.submit-note { font-size: 0.72rem; color: var(--ink-muted); margin-top: 0.55rem; }
+.submit-note {
+  font-size: 0.73rem;
+  color: var(--ink-muted);
+  margin-top: 0.6rem;
+}
 
-/* ── 遮罩 ── */
+/* ── 送出中遮罩 ── */
 #overlay {
-  display: none; position: fixed; inset: 0;
-  background: rgba(255,255,255,0.85);
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(255,255,255,0.82);
   z-index: 999;
-  align-items: center; justify-content: center;
-  flex-direction: column; gap: 1rem;
-  font-size: 0.92rem; color: var(--navy); font-weight: 600;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 1rem;
+  font-size: 0.95rem;
+  color: var(--navy);
+  font-weight: 600;
 }
 #overlay.visible { display: flex; }
 .spinner {
-  width: 34px; height: 34px;
+  width: 36px; height: 36px;
   border: 3px solid var(--navy-dim);
   border-top-color: var(--navy);
   border-radius: 50%;
@@ -320,22 +361,43 @@ main { max-width: 680px; margin: 0 auto; padding: 1.75rem 1rem 5rem; }
 @keyframes spin { to { transform: rotate(360deg); } }
 
 /* ── 感謝頁 ── */
-#thankyou { display: none; text-align: center; padding: 3.5rem 1.5rem; }
-#thankyou .ty-icon { font-size: 2.75rem; margin-bottom: 1.1rem; }
+#thankyou {
+  display: none;
+  text-align: center;
+  padding: 4rem 2rem;
+}
+#thankyou .ty-icon { font-size: 3rem; margin-bottom: 1.25rem; }
 #thankyou h2 {
   font-family: 'Noto Serif TC', serif;
-  font-size: 1.4rem; font-weight: 700;
-  margin-bottom: 0.65rem; color: var(--navy);
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+  color: var(--navy);
 }
-#thankyou p { font-size: 0.86rem; color: var(--ink-muted); line-height: 1.9; }
+#thankyou p { font-size: 0.88rem; color: var(--ink-muted); line-height: 1.9; }
 #thankyou .ref-num {
-  display: inline-block; margin-top: 1.25rem;
-  font-size: 0.72rem; background: var(--navy-dim);
-  color: var(--navy); padding: 4px 12px;
-  border-radius: 20px; font-weight: 600;
+  display: inline-block;
+  margin-top: 1.5rem;
+  font-size: 0.73rem;
+  background: var(--navy-dim);
+  color: var(--navy);
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-weight: 600;
 }
 
-.scene-sep { border: none; border-top: 1px dashed var(--rule); margin: 1rem 0; }
+/* ── 分隔線 ── */
+.scene-sep {
+  border: none;
+  border-top: 1px dashed var(--rule);
+  margin: 1.1rem 0;
+}
+
+/* ── 響應式 ── */
+@media (max-width: 500px) {
+  .scale-btn { max-width: 36px; font-size: 0.72rem; }
+  main { padding: 1.5rem 1rem 4rem; }
+}
 </style>
 </head>
 <body>
@@ -343,20 +405,20 @@ main { max-width: 680px; margin: 0 auto; padding: 1.75rem 1rem 5rem; }
 <header class="site-header">
   <div class="kicker">澳門公共行政研究 · 情境實驗</div>
   <h1>績效指標體制與公務員工作動機研究</h1>
-  <p class="subtitle">本問卷純屬學術研究用途，所有回答匿名處理<br>填答約需 8–10 分鐘</p>
+  <p class="subtitle">本問卷純屬學術研究用途，所有回答匿名處理，填答約需 8–10 分鐘</p>
 </header>
 
 <div class="prog-rail"><div class="prog-fill" id="progFill"></div></div>
 
 <main>
   <div class="notice">
-    📋 <strong>填答說明：</strong>請閱讀每道題的情境描述，以當事人身份回答各題。完成後請點擊「提交問卷」。您的數據將以匿名形式儲存，僅供學術分析使用。
+    📋 <strong>填答說明：</strong>請閱讀每道題的情境描述，以當事人身份回答各題。問卷設計為單向作答，完成後請點擊「提交問卷」。您的數據將以匿名形式儲存，僅供學術分析使用。
   </div>
 
   <div id="survey-form">
 
-    <!-- A 基本資料 -->
-    <div class="section">
+    <!-- ══ A 部分：基本資料 ══ -->
+    <div class="section" id="sec-a">
       <div class="section-head">
         <span class="sec-tag tag-navy">A · 基本資料</span>
         <span class="section-title">職業背景</span>
@@ -364,7 +426,8 @@ main { max-width: 680px; margin: 0 auto; padding: 1.75rem 1rem 5rem; }
       <p class="section-desc">以下資料僅供分組分析之用，不涉及任何個人識別信息。</p>
 
       <div class="q-card" id="card-A1">
-        <div class="q-row"><span class="q-num">A1</span>
+        <div class="q-row">
+          <span class="q-num">A1</span>
           <div class="q-body">
             <div class="q-text">您目前的職程類別為何？<span class="req">*</span></div>
             <div class="radio-group">
@@ -380,7 +443,8 @@ main { max-width: 680px; margin: 0 auto; padding: 1.75rem 1rem 5rem; }
       </div>
 
       <div class="q-card" id="card-A2">
-        <div class="q-row"><span class="q-num">A2</span>
+        <div class="q-row">
+          <span class="q-num">A2</span>
           <div class="q-body">
             <div class="q-text">您的現職年資？<span class="req">*</span></div>
             <div class="radio-group">
@@ -395,7 +459,8 @@ main { max-width: 680px; margin: 0 auto; padding: 1.75rem 1rem 5rem; }
       </div>
 
       <div class="q-card" id="card-A3">
-        <div class="q-row"><span class="q-num">A3</span>
+        <div class="q-row">
+          <span class="q-num">A3</span>
           <div class="q-body">
             <div class="q-text">您的崗位性質？<span class="req">*</span></div>
             <div class="radio-group">
@@ -409,8 +474,8 @@ main { max-width: 680px; margin: 0 auto; padding: 1.75rem 1rem 5rem; }
       </div>
     </div>
 
-    <!-- B 情境 -->
-    <div class="section">
+    <!-- ══ B 部分：情境設定 ══ -->
+    <div class="section" id="sec-b">
       <div class="section-head">
         <span class="sec-tag tag-teal">B · 政策情境</span>
         <span class="section-title">請仔細閱讀以下情境</span>
@@ -419,20 +484,21 @@ main { max-width: 680px; margin: 0 auto; padding: 1.75rem 1rem 5rem; }
 
       <div class="scenario-box type-a" id="scen-A" style="display:none;">
         <div class="scenario-label">情境 A · 支持型指標體制</div>
-        您任職於A部門，負責處理複雜的牌照申請審核。近期部門引入了「電子審批效能監測系統」，會即時記錄每宗個案的處理時效與審批節點。<br><br>
+        您任職於澳門某部門，負責處理複雜的牌照申請審核。近期部門引入了「電子審批效能監測系統」，會即時記錄每宗個案的處理時效與審批節點。<br><br>
         上級明確表示，系統數據<strong>僅用於識別流程樽頸以協助調配人手及優化資源分配</strong>，數據不作為部門績效評審或個人考核之用。當系統數據顯示某類個案處理時間偏長時，部門會主動增派人手或提供技術支援，以協助前線同事解決問題。
       </div>
 
       <div class="scenario-box type-b" id="scen-B" style="display:none;">
         <div class="scenario-label">情境 B · 控制型指標體制</div>
-        您任職於B部門，負責處理複雜的牌照申請審核。近期部門引入了「電子審批效能監測系統」，會即時記錄每宗個案的處理時效與審批節點。<br><br>
+        您任職於澳門某部門，負責處理複雜的牌照申請審核。近期部門引入了「電子審批效能監測系統」，會即時記錄每宗個案的處理時效與審批節點。<br><br>
         上級明確表示，系統數據直接連結部門績效及個人獎懲機制。<strong>若個人指標連續兩個月低於部門平均值，將影響年終績效評級及晉升考量</strong>；部門另設「優異比例設限」，每年只有特定百分比人員可獲最高評級。若部門審批績效不達標，相關人員須向單位主管提交書面解釋報告並接受問責。
       </div>
 
       <div class="q-card" id="card-B0">
-        <div class="q-row"><span class="q-num">B0</span>
+        <div class="q-row">
+          <span class="q-num">B0</span>
           <div class="q-body">
-            <div class="q-text">根據您剛才閱讀的情境，系統數據的主要用途是？<span class="req">*</span></div>
+            <div class="q-text">根據您剛才閱讀的情境，該系統數據的主要用途是？<span class="req">*</span></div>
             <div class="radio-group">
               <label><input type="radio" name="B0" value="1" onchange="tick()"><span>識別流程樽頸及調配人手（資源支援）</span></label>
               <label><input type="radio" name="B0" value="2" onchange="tick()"><span>連結個人績效評核及晉升獎懲</span></label>
@@ -444,28 +510,29 @@ main { max-width: 680px; margin: 0 auto; padding: 1.75rem 1rem 5rem; }
       </div>
     </div>
 
-    <!-- 第一部分：即時決策 Q1–Q3 -->
-    <div class="section">
+    <!-- ══ 第一部分：即時決策場景 ══ -->
+    <div class="section" id="sec-q1q3">
       <div class="section-head">
         <span class="sec-tag tag-amber">第一部分 · 即時決策</span>
         <span class="section-title">工作決策選擇</span>
       </div>
       <p class="section-desc">以下場景發生在您閱讀上述情境後的同一個工作天。請選擇最接近您真實反應的選項。</p>
 
+      <!-- 場景一 -->
       <div class="scene-box">
         <div class="scene-label">📁 場景一：複雜個案處理</div>
         您正在審核一宗複雜牌照申請，若按標準流程逐項核查，預計需要比系統設定時限多出兩天；若採用較簡化的審核路徑，可準時完成但需要您自行判斷某些邊界情況。
       </div>
 
       <div class="q-card" id="card-Q1">
-        <div class="q-row"><span class="q-num">Q1</span>
+        <div class="q-row">
+          <span class="q-num">Q1</span>
           <div class="q-body">
             <div class="q-text">在此情境下，您會傾向如何處理？<span class="req">*</span></div>
             <div class="scale-wrap">
               <div class="scale-labels">
-                <span class="lbl-left">按標準流程逐項核查（即使超出時限）</span>
-                <span class="lbl-sep">—</span>
-                <span class="lbl-right">採用簡化路徑準時完成</span>
+                <span>完全傾向按標準流程核查（即使超出時限）</span>
+                <span>完全傾向採用簡化路徑準時完成</span>
               </div>
               <div class="scale-options">
                 <label><input type="radio" name="Q1" value="1" onchange="tick()"><div class="scale-btn">1</div></label>
@@ -482,20 +549,21 @@ main { max-width: 680px; margin: 0 auto; padding: 1.75rem 1rem 5rem; }
 
       <hr class="scene-sep">
 
+      <!-- 場景二 -->
       <div class="scene-box">
         <div class="scene-label">📋 場景二：工作排序</div>
         您今天同時收到三宗申請：一宗簡單（預計半天完成）、一宗中等（預計一天）、一宗複雜（預計三天）。系統顯示您本週結案數量低於部門平均。
       </div>
 
       <div class="q-card" id="card-Q2">
-        <div class="q-row"><span class="q-num">Q2</span>
+        <div class="q-row">
+          <span class="q-num">Q2</span>
           <div class="q-body">
             <div class="q-text">您會如何安排今天的工作順序？<span class="req">*</span></div>
             <div class="scale-wrap">
               <div class="scale-labels">
-                <span class="lbl-left">先處理複雜個案</span>
-                <span class="lbl-sep">—</span>
-                <span class="lbl-right">先處理簡單個案（提升結案數）</span>
+                <span>完全傾向先處理複雜個案</span>
+                <span>完全傾向先處理簡單個案（提升結案數量）</span>
               </div>
               <div class="scale-options">
                 <label><input type="radio" name="Q2" value="1" onchange="tick()"><div class="scale-btn">1</div></label>
@@ -511,14 +579,14 @@ main { max-width: 680px; margin: 0 auto; padding: 1.75rem 1rem 5rem; }
       </div>
 
       <div class="q-card" id="card-Q3">
-        <div class="q-row"><span class="q-num">Q3</span>
+        <div class="q-row">
+          <span class="q-num">Q3</span>
           <div class="q-body">
             <div class="q-text">與您目前真實的工作環境相比，在此制度下您處理個案時的自主判斷空間變化為何？<span class="req">*</span></div>
             <div class="scale-wrap">
               <div class="scale-labels">
-                <span class="lbl-left">顯著減少</span>
-                <span class="lbl-sep">—</span>
-                <span class="lbl-right">顯著增加</span>
+                <span>顯著減少</span>
+                <span>顯著增加</span>
               </div>
               <div class="scale-options">
                 <label><input type="radio" name="Q3" value="1" onchange="tick()"><div class="scale-btn">1</div></label>
@@ -534,8 +602,8 @@ main { max-width: 680px; margin: 0 auto; padding: 1.75rem 1rem 5rem; }
       </div>
     </div>
 
-    <!-- 第二部分：PSM Q4–Q6 -->
-    <div class="section">
+    <!-- ══ 第二部分：工作動機（PSM）Q4–Q6 ══ -->
+    <div class="section" id="sec-q4q6">
       <div class="section-head">
         <span class="sec-tag tag-navy">第二部分 · 工作動機</span>
         <span class="section-title">工作日結束後的感受</span>
@@ -543,11 +611,12 @@ main { max-width: 680px; margin: 0 auto; padding: 1.75rem 1rem 5rem; }
       <p class="section-desc">完成今天的工作後，請評估以下陳述與您感受的符合程度（1 = 非常不同意，5 = 非常同意）。</p>
 
       <div class="q-card" id="card-Q4">
-        <div class="q-row"><span class="q-num">Q4</span>
+        <div class="q-row">
+          <span class="q-num">Q4</span>
           <div class="q-body">
-            <div class="q-text">今天的工作讓我感到，我的努力方向與服務市民的目標一致<span class="req">*</span></div>
+            <div class="q-text">今天的工作讓我感到，我的努力方向與服務市民的目標一致<span class="badge badge-rev">反向計分</span><span class="req">*</span></div>
             <div class="scale-wrap">
-              <div class="scale-labels"><span class="lbl-left">非常不同意</span><span class="lbl-sep">—</span><span class="lbl-right">非常同意</span></div>
+              <div class="scale-labels"><span>非常不同意</span><span>非常同意</span></div>
               <div class="scale-options">
                 <label><input type="radio" name="Q4" value="1" onchange="tick()"><div class="scale-btn">1</div></label>
                 <label><input type="radio" name="Q4" value="2" onchange="tick()"><div class="scale-btn">2</div></label>
@@ -562,11 +631,12 @@ main { max-width: 680px; margin: 0 auto; padding: 1.75rem 1rem 5rem; }
       </div>
 
       <div class="q-card" id="card-Q5">
-        <div class="q-row"><span class="q-num">Q5</span>
+        <div class="q-row">
+          <span class="q-num">Q5</span>
           <div class="q-body">
-            <div class="q-text">完成今天的複雜個案後，我感受到明顯的專業成就感<span class="req">*</span></div>
+            <div class="q-text">完成今天的複雜個案後，我感受到明顯的專業成就感<span class="badge badge-rev">反向計分</span><span class="req">*</span></div>
             <div class="scale-wrap">
-              <div class="scale-labels"><span class="lbl-left">非常不同意</span><span class="lbl-sep">—</span><span class="lbl-right">非常同意</span></div>
+              <div class="scale-labels"><span>非常不同意</span><span>非常同意</span></div>
               <div class="scale-options">
                 <label><input type="radio" name="Q5" value="1" onchange="tick()"><div class="scale-btn">1</div></label>
                 <label><input type="radio" name="Q5" value="2" onchange="tick()"><div class="scale-btn">2</div></label>
@@ -581,11 +651,12 @@ main { max-width: 680px; margin: 0 auto; padding: 1.75rem 1rem 5rem; }
       </div>
 
       <div class="q-card" id="card-Q6">
-        <div class="q-row"><span class="q-num">Q6</span>
+        <div class="q-row">
+          <span class="q-num">Q6</span>
           <div class="q-body">
-            <div class="q-text">若明天遇到需要額外時間才能找到最佳方案的個案，我仍願意投入<span class="req">*</span></div>
+            <div class="q-text">若明天遇到需要額外時間才能找到最佳方案的個案，我仍願意投入<span class="badge badge-rev">反向計分</span><span class="req">*</span></div>
             <div class="scale-wrap">
-              <div class="scale-labels"><span class="lbl-left">非常不同意</span><span class="lbl-sep">—</span><span class="lbl-right">非常同意</span></div>
+              <div class="scale-labels"><span>非常不同意</span><span>非常同意</span></div>
               <div class="scale-options">
                 <label><input type="radio" name="Q6" value="1" onchange="tick()"><div class="scale-btn">1</div></label>
                 <label><input type="radio" name="Q6" value="2" onchange="tick()"><div class="scale-btn">2</div></label>
@@ -600,8 +671,8 @@ main { max-width: 680px; margin: 0 auto; padding: 1.75rem 1rem 5rem; }
       </div>
     </div>
 
-    <!-- 第三部分：離職傾向 Q7–Q10 -->
-    <div class="section">
+    <!-- ══ 第三部分：離職傾向光譜 Q7–Q10 ══ -->
+    <div class="section" id="sec-q7q10">
       <div class="section-head">
         <span class="sec-tag tag-red">第三部分 · 職業展望</span>
         <span class="section-title">較長遠的職業感受</span>
@@ -609,11 +680,12 @@ main { max-width: 680px; margin: 0 auto; padding: 1.75rem 1rem 5rem; }
       <p class="section-desc">以下題目關於您對現職的長遠看法，請按真實感受作答（1 = 非常不同意，5 = 非常同意）。</p>
 
       <div class="q-card" id="card-Q7">
-        <div class="q-row"><span class="q-num">Q7</span>
+        <div class="q-row">
+          <span class="q-num">Q7</span>
           <div class="q-body">
             <div class="q-text">若長期在此制度下工作，我會更頻繁地想到離開公職體系<span class="req">*</span></div>
             <div class="scale-wrap">
-              <div class="scale-labels"><span class="lbl-left">非常不同意</span><span class="lbl-sep">—</span><span class="lbl-right">非常同意</span></div>
+              <div class="scale-labels"><span>非常不同意</span><span>非常同意</span></div>
               <div class="scale-options">
                 <label><input type="radio" name="Q7" value="1" onchange="tick()"><div class="scale-btn">1</div></label>
                 <label><input type="radio" name="Q7" value="2" onchange="tick()"><div class="scale-btn">2</div></label>
@@ -628,11 +700,12 @@ main { max-width: 680px; margin: 0 auto; padding: 1.75rem 1rem 5rem; }
       </div>
 
       <div class="q-card" id="card-Q8">
-        <div class="q-row"><span class="q-num">Q8</span>
+        <div class="q-row">
+          <span class="q-num">Q8</span>
           <div class="q-body">
             <div class="q-text">即使無法正式離職，我預計會逐漸將心力轉移至工作以外的事務<span class="req">*</span></div>
             <div class="scale-wrap">
-              <div class="scale-labels"><span class="lbl-left">非常不同意</span><span class="lbl-sep">—</span><span class="lbl-right">非常同意</span></div>
+              <div class="scale-labels"><span>非常不同意</span><span>非常同意</span></div>
               <div class="scale-options">
                 <label><input type="radio" name="Q8" value="1" onchange="tick()"><div class="scale-btn">1</div></label>
                 <label><input type="radio" name="Q8" value="2" onchange="tick()"><div class="scale-btn">2</div></label>
@@ -647,11 +720,12 @@ main { max-width: 680px; margin: 0 auto; padding: 1.75rem 1rem 5rem; }
       </div>
 
       <div class="q-card" id="card-Q9">
-        <div class="q-row"><span class="q-num">Q9</span>
+        <div class="q-row">
+          <span class="q-num">Q9</span>
           <div class="q-body">
-            <div class="q-text">薪酬福利會是我在此制度下持續投入現職的主要原因<span class="req">*</span></div>
+            <div class="q-text">薪酬福利會是我在此制度下持續投入現職的主要原因<span class="badge badge-local">澳門本地化</span><span class="req">*</span></div>
             <div class="scale-wrap">
-              <div class="scale-labels"><span class="lbl-left">非常不同意</span><span class="lbl-sep">—</span><span class="lbl-right">非常同意</span></div>
+              <div class="scale-labels"><span>非常不同意</span><span>非常同意</span></div>
               <div class="scale-options">
                 <label><input type="radio" name="Q9" value="1" onchange="tick()"><div class="scale-btn">1</div></label>
                 <label><input type="radio" name="Q9" value="2" onchange="tick()"><div class="scale-btn">2</div></label>
@@ -666,11 +740,12 @@ main { max-width: 680px; margin: 0 auto; padding: 1.75rem 1rem 5rem; }
       </div>
 
       <div class="q-card" id="card-Q10">
-        <div class="q-row"><span class="q-num">Q10</span>
+        <div class="q-row">
+          <span class="q-num">Q10</span>
           <div class="q-body">
-            <div class="q-text">我會期待盡早達到退休年資，以便轉換人生重心<span class="req">*</span></div>
+            <div class="q-text">我會期待盡早達到退休年資，以便轉換人生重心<span class="badge badge-local">澳門本地化</span><span class="req">*</span></div>
             <div class="scale-wrap">
-              <div class="scale-labels"><span class="lbl-left">非常不同意</span><span class="lbl-sep">—</span><span class="lbl-right">非常同意</span></div>
+              <div class="scale-labels"><span>非常不同意</span><span>非常同意</span></div>
               <div class="scale-options">
                 <label><input type="radio" name="Q10" value="1" onchange="tick()"><div class="scale-btn">1</div></label>
                 <label><input type="radio" name="Q10" value="2" onchange="tick()"><div class="scale-btn">2</div></label>
@@ -685,8 +760,8 @@ main { max-width: 680px; margin: 0 auto; padding: 1.75rem 1rem 5rem; }
       </div>
     </div>
 
-    <!-- 第四部分：心理狀態 Q11–Q13 -->
-    <div class="section">
+    <!-- ══ 第四部分：心理狀態 Q11–Q13 ══ -->
+    <div class="section" id="sec-q11q13">
       <div class="section-head">
         <span class="sec-tag tag-violet">第四部分 · 心理狀態</span>
         <span class="section-title">工作壓力與倦怠感</span>
@@ -694,11 +769,12 @@ main { max-width: 680px; margin: 0 auto; padding: 1.75rem 1rem 5rem; }
       <p class="section-desc">以下題目評估此情境對您情緒狀態的影響（1 = 非常不同意，5 = 非常同意）。</p>
 
       <div class="q-card" id="card-Q11">
-        <div class="q-row"><span class="q-num">Q11</span>
+        <div class="q-row">
+          <span class="q-num">Q11</span>
           <div class="q-body">
             <div class="q-text">在此制度下，我會傾向減少主動承接耗時較長的複雜個案<span class="req">*</span></div>
             <div class="scale-wrap">
-              <div class="scale-labels"><span class="lbl-left">非常不同意</span><span class="lbl-sep">—</span><span class="lbl-right">非常同意</span></div>
+              <div class="scale-labels"><span>非常不同意</span><span>非常同意</span></div>
               <div class="scale-options">
                 <label><input type="radio" name="Q11" value="1" onchange="tick()"><div class="scale-btn">1</div></label>
                 <label><input type="radio" name="Q11" value="2" onchange="tick()"><div class="scale-btn">2</div></label>
@@ -713,11 +789,12 @@ main { max-width: 680px; margin: 0 auto; padding: 1.75rem 1rem 5rem; }
       </div>
 
       <div class="q-card" id="card-Q12">
-        <div class="q-row"><span class="q-num">Q12</span>
+        <div class="q-row">
+          <span class="q-num">Q12</span>
           <div class="q-body">
             <div class="q-text">在此制度下，系統對工作進度的即時記錄令我感到一定壓力<span class="req">*</span></div>
             <div class="scale-wrap">
-              <div class="scale-labels"><span class="lbl-left">非常不同意</span><span class="lbl-sep">—</span><span class="lbl-right">非常同意</span></div>
+              <div class="scale-labels"><span>非常不同意</span><span>非常同意</span></div>
               <div class="scale-options">
                 <label><input type="radio" name="Q12" value="1" onchange="tick()"><div class="scale-btn">1</div></label>
                 <label><input type="radio" name="Q12" value="2" onchange="tick()"><div class="scale-btn">2</div></label>
@@ -732,11 +809,12 @@ main { max-width: 680px; margin: 0 auto; padding: 1.75rem 1rem 5rem; }
       </div>
 
       <div class="q-card" id="card-Q13">
-        <div class="q-row"><span class="q-num">Q13</span>
+        <div class="q-row">
+          <span class="q-num">Q13</span>
           <div class="q-body">
-            <div class="q-text">即使在此制度下，我仍能維持對市民服務的耐心與熱誠<span class="req">*</span></div>
+            <div class="q-text">即使在此制度下，我仍能維持對市民服務的耐心與熱誠<span class="badge badge-rev">反向計分</span><span class="req">*</span></div>
             <div class="scale-wrap">
-              <div class="scale-labels"><span class="lbl-left">非常不同意</span><span class="lbl-sep">—</span><span class="lbl-right">非常同意</span></div>
+              <div class="scale-labels"><span>非常不同意</span><span>非常同意</span></div>
               <div class="scale-options">
                 <label><input type="radio" name="Q13" value="1" onchange="tick()"><div class="scale-btn">1</div></label>
                 <label><input type="radio" name="Q13" value="2" onchange="tick()"><div class="scale-btn">2</div></label>
@@ -751,74 +829,132 @@ main { max-width: 680px; margin: 0 auto; padding: 1.75rem 1rem 5rem; }
       </div>
     </div>
 
+    <!-- ══ 提交 ══ -->
     <div class="submit-zone">
       <button class="submit-btn" id="submitBtn" onclick="submitSurvey()">提交問卷</button>
       <p class="submit-note">提交後數據將以匿名方式儲存，不可追溯至個人</p>
     </div>
 
-  </div><!-- end survey-form -->
+  </div><!-- end #survey-form -->
 
+  <!-- ══ 感謝頁 ══ -->
   <div id="thankyou">
     <div class="ty-icon">🎓</div>
     <h2>感謝您的寶貴參與！</h2>
     <p>您的回答已成功記錄。<br>研究結果將以統計總體形式公佈，不涉及任何個人識別信息。<br>如有查詢，請聯絡研究團隊。</p>
     <div class="ref-num" id="refNum"></div>
   </div>
-</main>
 
+</main><!-- end main -->
+
+<!-- 送出中遮罩 -->
 <div id="overlay">
   <div class="spinner"></div>
   <span>正在提交，請稍候…</span>
 </div>
 
 <script>
-// ① 隨機分配情境
-(function() {
+// ══════════════════════════════════════════
+//  ① 隨機分配情境（同一連結，自動A/B）
+// ══════════════════════════════════════════
+(function assignScenario() {
+  // 允許 URL 參數強制指定情境（施測人員預覽用）
+  // ?scenario=A 或 ?scenario=B
   const params = new URLSearchParams(window.location.search);
-  let g = params.get('scenario');
-  if (!g || !['A','B'].includes(g.toUpperCase())) g = Math.random() < 0.5 ? 'A' : 'B';
-  window._group = g.toUpperCase();
+  let group = params.get('scenario');
+  if (!group || !['A','B'].includes(group.toUpperCase())) {
+    group = Math.random() < 0.5 ? 'A' : 'B';
+  }
+  window._group = group.toUpperCase();
+
   document.getElementById('scen-' + window._group).style.display = 'block';
 })();
 
-// ② 進度條
-const FIELDS = ['A1','A2','A3','B0','Q1','Q2','Q3','Q4','Q5','Q6','Q7','Q8','Q9','Q10','Q11','Q12','Q13'];
+// ══════════════════════════════════════════
+//  ② 進度條
+// ══════════════════════════════════════════
+const ALL_FIELDS = [
+  'A1','A2','A3',
+  'B0',
+  'Q1','Q2','Q3',
+  'Q4','Q5','Q6',
+  'Q7','Q8','Q9','Q10',
+  'Q11','Q12','Q13'
+];
+
 function tick() {
-  const n = FIELDS.filter(f => document.querySelector(`input[name="${f}"]:checked`)).length;
-  document.getElementById('progFill').style.width = Math.round(n / FIELDS.length * 100) + '%';
+  const answered = ALL_FIELDS.filter(n => document.querySelector(`input[name="${n}"]:checked`)).length;
+  document.getElementById('progFill').style.width = Math.round(answered / ALL_FIELDS.length * 100) + '%';
 }
 
-// ③ 提交驗證
+// ══════════════════════════════════════════
+//  ③ 驗證與提交
+// ══════════════════════════════════════════
 function submitSurvey() {
   let valid = true;
-  FIELDS.forEach(f => {
-    const card = document.getElementById('card-' + f);
-    const ok = !!document.querySelector(`input[name="${f}"]:checked`);
+  ALL_FIELDS.forEach(name => {
+    const card = document.getElementById('card-' + name);
+    const ok = !!document.querySelector(`input[name="${name}"]:checked`);
     if (card) card.classList.toggle('has-error', !ok);
     if (!ok) valid = false;
   });
-  if (!valid) { document.querySelector('.has-error')?.scrollIntoView({behavior:'smooth',block:'center'}); return; }
 
-  const data = { scenario: window._group, timestamp: new Date().toISOString(), ref: 'R' + Date.now().toString(36).toUpperCase() };
-  FIELDS.forEach(f => { const el = document.querySelector(`input[name="${f}"]:checked`); if (el) data[f] = parseInt(el.value); });
-  sendData(data);
+  if (!valid) {
+    document.querySelector('.has-error')?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    return;
+  }
+
+  // 收集數據
+  const data = {
+    scenario: window._group,
+    timestamp: new Date().toISOString(),
+    ref: 'R' + Date.now().toString(36).toUpperCase()
+  };
+  ALL_FIELDS.forEach(n => {
+    const el = document.querySelector(`input[name="${n}"]:checked`);
+    if (el) data[n] = parseInt(el.value);
+  });
+
+  sendToGoogleSheets(data);
 }
 
-// ④ Google Sheets 提交
-// 【設定方法】將下方 YOUR_GOOGLE_APPS_SCRIPT_URL_HERE 替換為你的 Apps Script 執行網址
-const SHEETS_URL = 'YOUR_GOOGLE_APPS_SCRIPT_URL_HERE';
+// ══════════════════════════════════════════
+//  ④ Google Sheets 提交
+//
+//  【設定步驟】
+//  1. 在 Google Sheets 建立試算表，第一行填入欄位標題：
+//     timestamp | ref | scenario | A1 | A2 | A3 | B0 |
+//     Q1 | Q2 | Q3 | Q4 | Q5 | Q6 |
+//     Q7 | Q8 | Q9 | Q10 | Q11 | Q12 | Q13
+//  2. 在 Google Sheets → 擴充功能 → Apps Script，貼入 README.md 的腳本
+//  3. 部署為 Web App（任何人可存取），複製執行網址
+//  4. 將網址填入下方 SHEETS_URL
+// ══════════════════════════════════════════
+const SHEETS_URL = 'YOUR_GOOGLE_APPS_SCRIPT_URL_HERE'; // ← 替換此處
 
-async function sendData(data) {
+async function sendToGoogleSheets(data) {
   document.getElementById('overlay').classList.add('visible');
   document.getElementById('submitBtn').disabled = true;
+
   try {
-    await fetch(SHEETS_URL, { method:'POST', mode:'no-cors', headers:{'Content-Type':'application/json'}, body:JSON.stringify(data) });
+    await fetch(SHEETS_URL, {
+      method: 'POST',
+      mode: 'no-cors',                    // Apps Script 不需 CORS preflight
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(data)
+    });
     showThankyou(data.ref);
-  } catch(e) {
-    console.warn('提交失敗:', e);
-    console.log('數據（開發模式）:', JSON.stringify(data, null, 2));
-    if (SHEETS_URL === 'YOUR_GOOGLE_APPS_SCRIPT_URL_HERE') { showThankyou(data.ref); }
-    else { alert('提交時發生錯誤，請稍後再試。'); document.getElementById('submitBtn').disabled = false; }
+  } catch (err) {
+    // 若尚未設定 Sheets URL，仍可在 console 查看數據
+    console.warn('Sheets 提交失敗（可能尚未設定 SHEETS_URL）:', err);
+    console.log('問卷數據（開發模式）:', JSON.stringify(data, null, 2));
+    // 在未設定真實 URL 時仍顯示感謝頁（開發測試用）
+    if (SHEETS_URL === 'YOUR_GOOGLE_APPS_SCRIPT_URL_HERE') {
+      showThankyou(data.ref);
+    } else {
+      alert('提交時發生錯誤，請稍後再試或聯絡研究人員。');
+      document.getElementById('submitBtn').disabled = false;
+    }
   } finally {
     document.getElementById('overlay').classList.remove('visible');
   }
@@ -829,8 +965,9 @@ function showThankyou(ref) {
   document.getElementById('thankyou').style.display = 'block';
   document.getElementById('refNum').textContent = '參考編號：' + ref;
   document.getElementById('progFill').style.width = '100%';
-  window.scrollTo({top:0,behavior:'smooth'});
+  window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 </script>
+
 </body>
 </html>
