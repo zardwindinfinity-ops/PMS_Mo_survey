@@ -177,25 +177,52 @@ main { max-width: 680px; margin: 0 auto; padding: 1.75rem 1rem 5rem; }
 }
 .q-card.has-error .error-msg { display: block; }
 
-/* ── Likert 量表（手機優化版）── */
-.scale-wrap { margin-top: 0.8rem; padding-top: 0.75rem; border-top: 1px solid var(--rule); }
+/* ── Likert 量表優化 (手機優化版) ── */
+.scale-wrap { 
+  margin-top: 1rem; 
+  padding-top: 1rem; 
+  border-top: 1px solid var(--rule);
+  position: relative;
+}
 
-/* 兩端文字：手機改為上下排列 */
+/* 在選項後面加上一條線，增加視覺連續感 */
+.scale-wrap::before {
+  content: '';
+  position: absolute;
+  top: 55px; 
+  left: 20px;
+  right: 20px;
+  height: 2px;
+  background: var(--rule);
+  z-index: 0;
+}
+
+/* 兩端文字：手機改為上下排列且有空間 */
 .scale-labels {
-  display: grid;
-  grid-template-columns: 1fr auto 1fr;
-  align-items: center;
-  gap: 0.3rem;
-  font-size: 0.67rem;
-  color: var(--ink-muted);
-  margin-bottom: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  font-size: 0.75rem;
+  color: var(--ink);
+  font-weight: 500;
+  margin-bottom: 1.2rem;
   line-height: 1.4;
 }
-.scale-labels .lbl-left  { text-align: left; }
-.scale-labels .lbl-right { text-align: right; }
-.scale-labels .lbl-sep   { text-align: center; color: var(--rule); font-size: 0.8rem; }
+.scale-labels .lbl-left, .scale-labels .lbl-right { 
+  text-align: center; 
+  padding: 4px 8px;
+  background: var(--navy-dim);
+  border-radius: 4px;
+}
+.scale-labels .lbl-sep { display: none; }
 
-.scale-options { display: flex; gap: 6px; justify-content: center; margin-top: 0.35rem; }
+.scale-options { 
+  display: flex; 
+  gap: 8px; 
+  justify-content: space-between;
+  position: relative; 
+  z-index: 1;
+}
 .scale-options label {
   display: flex;
   flex-direction: column;
@@ -204,41 +231,33 @@ main { max-width: 680px; margin: 0 auto; padding: 1.75rem 1rem 5rem; }
   flex: 1;
 }
 .scale-options input[type="radio"] { display: none; }
+
 .scale-btn {
   width: 100%;
-  max-width: 48px;
+  max-width: 45px;
   aspect-ratio: 1;
   border-radius: 50%;
-  border: 1.5px solid var(--rule);
-  background: var(--paper);
+  border: 2px solid var(--rule);
+  background: white;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 0.82rem;
-  color: var(--ink-muted);
-  transition: all 0.14s;
+  font-size: 0.9rem;
+  font-weight: 600;
+  transition: all 0.2s;
   cursor: pointer;
-  touch-action: manipulation;
 }
+
 .scale-options input[type="radio"]:checked + .scale-btn {
   background: var(--navy);
   border-color: var(--navy);
   color: white;
-  font-weight: 700;
 }
-.scale-options label:hover .scale-btn { border-color: var(--navy); color: var(--navy); }
 
-/* 手機版量表文字換行 */
+/* 手機版細節調整 */
 @media (max-width: 480px) {
-  .scale-labels {
-    grid-template-columns: 1fr;
-    grid-template-rows: auto auto auto;
-    text-align: center;
-  }
-  .scale-labels .lbl-left  { text-align: center; }
-  .scale-labels .lbl-right { text-align: center; }
-  .scale-labels .lbl-sep   { display: none; }
-  .scale-btn { max-width: 44px; font-size: 0.8rem; }
+  .scale-wrap::before { top: 58px; }
+  .scale-labels { margin-bottom: 1.5rem; }
   main { padding: 1.25rem 0.85rem 4rem; }
   .site-header { padding: 1.5rem 1rem 1.25rem; }
 }
